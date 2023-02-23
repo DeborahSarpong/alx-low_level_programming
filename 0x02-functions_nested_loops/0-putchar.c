@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	_putchar(95); / 95 is asci for _ /
+	_putchar(95); /*95 is asci for _*/
 	_putchar('p');
 	_putchar('u');
 	_putchar('t');
@@ -17,4 +17,5 @@ int main(void)
 	_putchar('\n');
 
 	return (0);
+
 }
