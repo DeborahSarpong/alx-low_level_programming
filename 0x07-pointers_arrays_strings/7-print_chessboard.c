@@ -1,18 +1,11 @@
 #include "main.h"
 /**
- * print_chessboard - Entry point
- * @a: array
- * Return: Always 0 (Success)
- */
-void print_chessboard(char (*a)[8])
+* set_string - a function that sets the value of a pointer to a char.
+*@s: pointer value
+*@to: value pointed to
+*
+*/
+void set_string(char **s, char *to)
 {
-	int i;
-	int j;
-
-	for (i = 0; i < 8; i++)
-	{
-		for (j = 0; j < 8; j++)
-			_putchar(a[i][j]);
-		_putchar('\n');
-	}
+	*s = to;
 }
