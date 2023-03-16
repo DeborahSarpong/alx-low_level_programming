@@ -1,40 +1,49 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * _strdup - return a pointer to newly allocated memory
- * @str: a string given by main
- * Return: the pointer or null
+ * string_nconcat - concatenates two strings.
+ * @s1: first string
+ * @s2: second string
+ * @n: index
+ * Return: char pointer
  */
-
-char *_strdup(char *str)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
-	unsigned int night, i;
-	/* confirm if str is null*/
-	if (str == NULL)
+	char *p;
+	unsigned int size1 = 0, size2 = 0, i;
+
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	while (s1[size1] != '\0')
 	{
-		return (NULL);
-	}
-	night = 0;
-	/* while str is not equal to 0*/
-	while (str[night] != '\0')
-	{
-		night++;
+		size1++;
 	}
 
-	ptr = malloc(sizeof(char) * (night + 1));
+	while (s2[size2] != '\0')
+	{
+		size2++;
+	}
 
-	/*if malloc is null*/
-	if (ptr == NULL)
+	if (n > size2)
+		n = size2;
+	p = malloc((size1 + n + 1) * sizeof(char));
+
+	if (p == NULL)
+		return (0);
+
+	for (i = 0; i < size1; i++)
 	{
-		return (NULL);
+		p[i] = s1[i];
 	}
-	/* if malloc is not null start a for loop*/
-	for (i = 0; i < night; i++)
+
+	for (; i < (size1 + n); i++)
 	{
-		ptr[i] = str[i];
+		p[i] = s2[i - size1];
 	}
-	ptr[night] = '\0';
-	return (ptr);
+	p[i] = '\0';
+	return (p);
 }
