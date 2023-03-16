@@ -3,6 +3,7 @@
 #define _MAIN_H_
 
 
+
 int _putchar(char c);
 
 int _islower(int c);
@@ -46,4 +47,3 @@ char *_strstr(char *haystack, char *needle);
 
 
 #endif
-
